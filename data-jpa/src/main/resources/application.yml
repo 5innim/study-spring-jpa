@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/datajpa
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+#        show_sql: true # => console 에 남김
+        format_sql: true
+
+
+logging.level:
+  org.hibernate.SQL: debug # => 별도 로그파일에 남김
+#  org.hibernate.type: trace # => 파라미터 바인딩도 확인 가능함
+#  org.hibernate.orm.jdbc.bind: trace # Spring boot 3.0.13부터는 Hibernate 6.1.7.Final 이상과 호환되는데, 해당 버전부터 JDBC bind parameter 로깅을 설정하는 방식이 바뀌었다. / 현재 외부 라이브러리 사용.
